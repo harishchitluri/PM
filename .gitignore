@@ -1,0 +1,15 @@
+# dependencies
+/backend/node_modules
+/frontend/node_modules
+/dbMigration/node_modules
+/node_modules
+.idea
+/backend/package-lock.json
+/frontend/package-lock.json
+/dbMigration/package-lock.json
+package-lock.json
+./package.json
+/data
+
+# misc
+.DS_Store

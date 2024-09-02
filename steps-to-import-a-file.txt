@@ -1,0 +1,12 @@
+Add these changes in the main react skeleton 
+
+
+multer":"^1.4.5-lts.1",    <include this file in package.json in backend>"
+RUN npm install             <include this in backends dockerfile before "RUN npm ci">
+RUN npm install csvtojson   <include this in backends dockerfile after "RUN npm ci">
+OR 
+add fast-csv:"^4.3.6" in package.json file in backend
+
+attach a post request in the code on endpoint http://localhost:3000/api/uploadCsv/create
+
+if you do not see the expected changes try: docker compose build --no-cache  and then docker compose up

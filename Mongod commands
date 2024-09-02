@@ -1,0 +1,10 @@
+** Commands to make mongod service active , Basically this command gives elevated permissions to run mongod service
+
+sudo chown -R mongodb:mongodb /var/lib/mongodb
+sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
+
+** start mongod service **
+sudo systemctl start mongod
+sudo systemctl stop mongod
+
+

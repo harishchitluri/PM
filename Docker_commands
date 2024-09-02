@@ -1,0 +1,34 @@
+sudo chmod -R 755 /path/to/docker/directory   -- recursicely apply all privileges to all files withing the directory
+
+docker run -it --name the_container -it myimage sh -- run the container with the name and bash into it
+
+'ctlr' + p followed by 'ctlr' + 'q'  -- to detrach from contnainer shell while keeping the container running
+
+docker rmi -f $(docker images -a -q)  -- delete all the docker images
+
+docker volume rm $(docker volume ls -q) -- delete all the docker volumes
+
+
+--------------------------docker clean commands ------------------------
+docker-compose -f compose.yaml down
+docker container prune -f
+docker image prune -a -f
+docker volume rm $(docker volume ls -q)
+docker builder prune -f
+docker system df 
+docker-compose -f compose.yaml build --no-cache
+docker-compose -f compose.yaml up -d    
+
+docker image prune --filter "dangling=true"
+docker system prune   -- clear all the dangling containers , build cache, images , networks
+docker-compose down -v --rmi all    -- to safely compose down the containers and their respective images and volumes
+
+
+docker-compose -f compose-test.yaml down
+docker container prune -f
+docker image prune -a -f
+docker volume rm $(docker volume ls -q)
+docker builder prune -f
+docker system df 
+docker-compose -f compose-test.yaml build --no-cache
+docker-compose -f compose-test.yaml up -d    
